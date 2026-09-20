@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="nl" dir="ltr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>House of Al Zaheri — Sierkaarsen & Arabische parfums</title>
+<meta name="description" content="Handgemaakte sierkaarsen en authentieke Arabische parfums van House of Al Zaheri. Bestel online, veilig betalen via iDEAL, creditcard of Apple Pay.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0b0906; --bg-panel:#15120c; --bg-card:#1a1610;
+    --gold:#c9974a; --gold-light:#e9cd94; --gold-dim:#8a6c3a;
+    --text:#f2ead9; --text-muted:#b3a68c; --line:#3a2f1e;
+    --danger:#c0554a; --ok:#5c8a5c;
+    font-family:'Cairo','Segoe UI',Tahoma,sans-serif;
+  }
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{color:inherit;}
+  button{font-family:inherit;cursor:pointer;}
+  .en{font-family:'Playfair Display',Georgia,serif;}
+  .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
+  .ornament-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim) 20%,var(--gold) 50%,var(--gold-dim) 80%,transparent);margin:0 auto;width:min(420px,70%);}
+  header.hero{padding:56px 0 64px;text-align:center;border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse at 50% -10%, rgba(201,151,74,0.14), transparent 60%), var(--bg);}
+  .emblem{width:104px;height:104px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;}
+  .brand-name-en{font-size:clamp(28px,5vw,44px);color:var(--gold-light);letter-spacing:.04em;margin:0;}
+  .brand-name-ar{font-size:clamp(15px,2.4vw,19px);color:var(--text-muted);letter-spacing:.12em;margin:6px 0 0;}
+  .tagline{margin:20px auto 0;max-width:520px;color:var(--text-muted);font-size:15px;}
+  .tagline .sub2{color:var(--gold);font-size:16px;display:block;margin-top:6px;}
+  .section{padding:56px 0;}
+  .section-head{text-align:center;margin-bottom:36px;}
+  .section-head h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px;color:var(--gold-light);}
+  .section-head p{color:var(--text-muted);margin:0;font-size:14.5px;}
+  .tabs{display:flex;gap:10px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;}
+  .tab{padding:9px 22px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text-muted);font-size:14px;font-weight:600;transition:border-color .2s,color .2s,background .2s;}
+  .tab.active,.tab:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(201,151,74,.08);}
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;}
+  .card{background:var(--bg-card);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;}
+  .card-img{aspect-ratio:1/1;background:#0f0d09;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line);}
+  .card-img img{width:100%;height:100%;object-fit:cover;}
+  .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
+  .card-cat{font-size:11.5px;letter-spacing:.06em;color:var(--gold-dim);}
+  .card-title{font-size:16.5px;font-weight:700;color:var(--text);margin:0;}
+  .card-desc{font-size:13.5px;color:var(--text-muted);flex:1;}
+  .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;gap:10px;}
+  .price{font-size:16px;color:var(--gold-light);font-weight:700;}
+  .btn{border:1px solid var(--gold-dim);background:transparent;color:var(--gold-light);padding:9px 16px;font-size:13.5px;font-weight:700;border-radius:2px;transition:background .2s,color .2s;white-space:nowrap;}
+  .btn:hover{background:var(--gold);color:#1a1207;}
+  .btn.primary{background:var(--gold);color:#1a1207;}
+  .btn.primary:hover{background:var(--gold-light);}
+  .btn.ghost{border-color:var(--line);color:var(--text-muted);}
+  .btn.small{padding:6px 12px;font-size:12.5px;}
+  .btn.block{width:100%;}
+  .btn:disabled{opacity:.5;cursor:not-allowed;}
+  .empty-note{text-align:center;color:var(--text-muted);border:1px dashed var(--line);padding:34px 20px;font-size:14px;}
+  .strip{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-panel);}
+  .strip-item{text-align:center;max-width:200px;}
+  .strip-item .ic{font-size:22px;color:var(--gold);margin-bottom:8px;}
+  .strip-item .t{font-size:13.5px;color:var(--text-muted);}
+  footer{padding:36px 0 30px;text-align:center;color:var(--text-muted);font-size:13px;border-top:1px solid var(--line);}
+  footer .brand{color:var(--gold-light);font-weight:700;}
+  .overlay{position:fixed;inset:0;background:rgba(6,5,3,.72);display:none;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;z-index:60;}
+  .overlay.show{display:flex;}
+  .modal{background:var(--bg-panel);border:1px solid var(--line);max-width:460px;width:100%;padding:26px 24px 24px;margin-top:24px;position:relative;}
+  .modal h3{margin:0 0 4px;color:var(--gold-light);font-size:19px;}
+  .modal .sub{color:var(--text-muted);font-size:13px;margin-bottom:18px;}
+  .field{margin-bottom:14px;}
+  .field label{display:block;font-size:13px;color:var(--text-muted);margin-bottom:6px;}
+  .field input,.field select,.field textarea{width:100%;background:#0f0d09;border:1px solid var(--line);color:var(--text);padding:10px 12px;font-size:14px;border-radius:2px;font-family:inherit;}
+  .field input:focus,.field select:focus,.field textarea:focus{outline:1px solid var(--gold);border-color:var(--gold);}
+  .field textarea{resize:vertical;min-height:70px;}
+  .row2{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+  .modal-actions{display:flex;gap:10px;margin-top:18px;}
+  .close-x{position:absolute;top:14px;right:14px;background:none;border:none;color:var(--text-muted);font-size:20px;line-height:1;}
+  .order-summary{background:#0f0d09;border:1px solid var(--line);padding:10px 12px;font-size:13px;color:var(--text-muted);margin-bottom:14px;}
+  .order-summary b{color:var(--gold-light);}
+  .payment-note{font-size:12.5px;color:var(--text-muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:4px;white-space:pre-line;}
+  #admin-fab{position:fixed;bottom:20px;right:20px;z-index:50;background:var(--gold);color:#1a1207;border:none;padding:12px 18px;border-radius:999px;font-weight:800;font-size:13.5px;box-shadow:0 6px 20px rgba(0,0,0,.5);}
+  .admin-panel{background:var(--bg-panel);border:1px solid var(--line);max-width:640px;width:100%;margin-top:24px;max-height:88vh;overflow-y:auto;}
+  .admin-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--bg-panel);}
+  .admin-head h3{margin:0;color:var(--gold-light);font-size:18px;}
+  .admin-tabs{display:flex;gap:8px;padding:14px 22px 0;}
+  .admin-body{padding:18px 22px 24px;}
+  .admin-tab-panel{display:none;}
+  .admin-tab-panel.active{display:block;}
+  .prod-row{display:flex;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);align-items:center;}
+  .prod-row img{width:52px;height:52px;object-fit:cover;background:#0f0d09;border:1px solid var(--line);}
+  .prod-row .pinfo{flex:1;min-width:0;}
+  .prod-row .pinfo .n{font-weight:700;font-size:14px;}
+  .prod-row .pinfo .p{font-size:12.5px;color:var(--text-muted);}
+  .prod-actions{display:flex;gap:6px;}
+  .field-file{display:flex;align-items:center;gap:12px;}
+  .file-preview{width:60px;height:60px;background:#0f0d09;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;color:var(--text-muted);font-size:11px;}
+  .file-preview img{width:100%;height:100%;object-fit:cover;}
+  .status-msg{font-size:13px;padding:10px 12px;border-radius:2px;margin-top:10px;display:none;}
+  .status-msg.show{display:block;}
+  .status-msg.ok{background:rgba(92,138,92,.15);color:#9fcf9f;border:1px solid var(--ok);}
+  .status-msg.err{background:rgba(192,85,74,.15);color:#e3a49d;border:1px solid var(--danger);}
+  .hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
+  .divider-label{font-size:12px;color:var(--gold-dim);letter-spacing:.06em;margin:22px 0 10px;padding-top:14px;border-top:1px solid var(--line);}
+  .divider-label:first-child{border-top:none;margin-top:0;padding-top:0;}
+  @media (max-width:520px){.row2{grid-template-columns:1fr;}.strip{gap:26px;}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="emblem">
+      <svg viewBox="0 0 100 100" width="100" height="100">
+        <path d="M50 6 L90 40 L90 94 L10 94 L10 40 Z" fill="none" stroke="#c9974a" stroke-width="1.4" opacity="0.55"/>
+        <text x="50" y="66" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="40" fill="#e9cd94" font-style="italic">AZ</text>
+      </svg>
+    </div>
+    <h1 class="brand-name-en en">House of Al Zaheri</h1>
+    <p class="brand-name-ar">Because you deserve to feel special</p>
+    <div class="ornament-line" style="margin-top:22px;"></div>
+    <p class="tagline" id="tagline-text">Handgemaakte sierkaarsen en authentieke Arabische parfums, met een vleugje luxe dat bij u past.
+      <span class="sub2">Beperkte oplages, met zorg gemaakt.</span>
+    </p>
+  </div>
+</header>
+
+<section class="strip">
+  <div class="strip-item"><div class="ic">✦</div><div class="t">Met de hand gemaakt, tot in het kleinste detail</div></div>
+  <div class="strip-item"><div class="ic">✦</div><div class="t">Hoogwaardige, authentieke ingrediënten</div></div>
+  <div class="strip-item"><div class="ic">✦</div><div class="t">Luxe verpakking, perfect als cadeau</div></div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head">
+      <h2>Onze collectie</h2>
+      <p>Sierkaarsen en Arabische parfums — elk stuk gemaakt met liefde en oog voor detail</p>
+    </div>
+    <div class="tabs">
+      <button class="tab active" data-filter="all">Alles</button>
+      <button class="tab" data-filter="candle">Sierkaarsen</button>
+      <button class="tab" data-filter="perfume">Arabische parfums</button>
+    </div>
+    <div id="grid" class="grid"><div class="empty-note">Producten worden geladen...</div></div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="ornament-line" style="margin-bottom:18px;"></div>
+    <span class="brand">House of Al Zaheri</span> — Because you deserve to feel special
+    <div id="footer-contact" style="margin-top:8px;"></div>
+  </div>
+</footer>
+
+<!-- ===================== ORDER MODAL ===================== -->
+<div class="overlay" id="order-overlay">
+  <div class="modal">
+    <button class="close-x" data-close-order>×</button>
+    <h3>Bestelling bevestigen</h3>
+    <p class="sub">Vul uw gegevens in, u wordt daarna direct doorgestuurd naar de beveiligde betaalpagina</p>
+    <div class="order-summary" id="order-summary"></div>
+    <form id="order-form">
+      <div class="field"><label>Volledige naam</label><input type="text" id="of-name" required></div>
+      <div class="row2">
+        <div class="field"><label>Telefoonnummer</label><input type="tel" id="of-phone" required placeholder="06xxxxxxxx"></div>
+        <div class="field"><label>Aantal</label><input type="number" id="of-qty" min="1" value="1" required></div>
+      </div>
+      <div class="field"><label>Bezorgadres</label><input type="text" id="of-address" required></div>
+      <div class="field"><label>Extra opmerkingen (optioneel)</label><textarea id="of-notes" placeholder="Bijv.: gewenste kleur, geurvoorkeur..."></textarea></div>
+      <div class="payment-note">Veilig betalen via iDEAL, creditcard, Apple Pay of andere methoden (Mollie).</div>
+      <div class="modal-actions">
+        <button type="button" class="btn ghost block" data-close-order>Annuleren</button>
+        <button type="submit" class="btn primary block" id="order-submit-btn">Doorgaan naar betalen</button>
+      </div>
+      <div class="status-msg" id="order-status"></div>
+    </form>
+  </div>
+</div>
+
+<!-- ===================== ADMIN ===================== -->
+<button id="admin-fab">⚙ Beheer</button>
+
+<div class="overlay" id="admin-overlay">
+  <div class="admin-panel">
+    <div class="admin-head">
+      <h3>Winkelbeheer</h3>
+      <button class="close-x" data-close-admin style="position:static;">×</button>
+    </div>
+
+    <div id="admin-login" style="padding:22px;">
+      <div class="field"><label>Beheerderswachtwoord</label><input type="password" id="admin-password-input"></div>
+      <button class="btn primary block" id="admin-login-btn">Inloggen</button>
+      <div class="status-msg" id="admin-login-status"></div>
+    </div>
+
+    <div id="admin-content" style="display:none;">
+      <div class="admin-tabs">
+        <button class="tab active" data-atab="products">Producten</button>
+        <button class="tab" data-atab="add">Product toevoegen</button>
+        <button class="tab" data-atab="settings">Instellingen</button>
+      </div>
+      <div class="admin-body">
+        <div class="admin-tab-panel active" data-apanel="products">
+          <div id="admin-product-list"></div>
+        </div>
+
+        <div class="admin-tab-panel" data-apanel="add">
+          <form id="product-form">
+            <input type="hidden" id="pf-id">
+            <div class="field"><label>Productnaam</label><input type="text" id="pf-name" required></div>
+            <div class="row2">
+              <div class="field"><label>Categorie</label>
+                <select id="pf-cat"><option value="candle">Sierkaars</option><option value="perfume">Arabisch parfum</option></select>
+              </div>
+              <div class="field"><label>Prijs (€)</label><input type="number" id="pf-price" min="0" step="0.01" required></div>
+            </div>
+            <div class="field"><label>Korte beschrijving</label><textarea id="pf-desc"></textarea></div>
+            <div class="field">
+              <label>Productafbeelding</label>
+              <div class="field-file">
+                <div class="file-preview" id="pf-preview">Geen afbeelding</div>
+                <input type="file" id="pf-image" accept="image/*">
+              </div>
+              <div class="hint">Bij voorkeur een vierkante afbeelding kleiner dan 1 MB.</div>
+            </div>
+            <div class="modal-actions">
+              <button type="button" class="btn ghost block" id="pf-reset">Velden wissen</button>
+              <button type="submit" class="btn primary block" id="pf-submit">Product opslaan</button>
+            </div>
+            <div class="status-msg" id="pf-status"></div>
+          </form>
+        </div>
+
+        <div class="admin-tab-panel" data-apanel="settings">
+          <form id="settings-form">
+            <div class="divider-label">Bestellingen ontvangen</div>
+            <div class="field"><label>WhatsApp-nummer (internationaal formaat)</label><input type="text" id="sf-whatsapp" placeholder="316xxxxxxxx"></div>
+            <div class="field"><label>E-mailadres</label><input type="email" id="sf-email"></div>
+            <div class="divider-label">Sitetekst</div>
+            <div class="field"><label>Welkomstzin onder het logo</label><textarea id="sf-tagline"></textarea></div>
+            <button type="submit" class="btn primary block">Instellingen opslaan</button>
+            <div class="status-msg" id="sf-status"></div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ====== FILL THESE IN AFTER CREATING YOUR SUPABASE PROJECT (see SETUP.md) ====== */
+const SUPABASE_URL = "https://YOUR-PROJECT.supabase.co";
+const SUPABASE_ANON_KEY = "YOUR_SUPABASE_ANON_PUBLIC_KEY";
+/* ================================================================================ */
+
+(function(){
+  "use strict";
+  var products = [];
+  var settings = {};
+  var currentFilter = 'all';
+  var pendingProduct = null;
+  var adminPassword = null;
+  var pfImageFile = null;
+
+  function money(n){ return '€' + Number(n).toLocaleString('nl-NL',{minimumFractionDigits:2,maximumFractionDigits:2}); }
+  function catLabel(c){ return c === 'perfume' ? 'Arabisch parfum' : 'Sierkaars'; }
+  function escapeHtml(s){ var d=document.createElement('div'); d.textContent = s==null?'':s; return d.innerHTML; }
+  function placeholderSvg(label){
+    var safe=(label||'').slice(0,2);
+    return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><rect width="100%" height="100%" fill="#12100a"/><text x="50%" y="52%" font-family="Georgia, serif" font-size="60" fill="#5a4a2c" text-anchor="middle" dominant-baseline="middle">'+safe+'</text></svg>');
+  }
+
+  async function sbGet(path){
+    var res = await fetch(SUPABASE_URL + '/rest/v1/' + path, {
+      headers: { apikey: SUPABASE_ANON_KEY, Authorization: 'Bearer ' + SUPABASE_ANON_KEY }
+    });
+    return res.json();
+  }
+
+  async function loadData(){
+    try{
+      products = await sbGet('products?select=*&order=created_at.desc');
+      var s = await sbGet('settings?id=eq.1&select=*');
+      settings = (s && s[0]) || {};
+    }catch(err){ console.error('load failed', err); products = []; }
+    renderGrid();
+    renderFooter();
+  }
+
+  function renderGrid(){
+    var grid = document.getElementById('grid');
+    var items = products.filter(function(p){ return currentFilter==='all' || p.category===currentFilter; });
+    if(items.length===0){ grid.innerHTML = '<div class="empty-note" style="grid-column:1/-1;">Geen producten in deze categorie.</div>'; return; }
+    grid.innerHTML = items.map(function(p){
+      var img = p.image_url || placeholderSvg(p.name);
+      return '<div class="card"><div class="card-img"><img src="'+img+'" alt="'+escapeHtml(p.name)+'"></div>'+
+        '<div class="card-body"><div class="card-cat">'+catLabel(p.category)+'</div>'+
+        '<div class="card-title">'+escapeHtml(p.name)+'</div>'+
+        '<div class="card-desc">'+escapeHtml(p.description||'')+'</div>'+
+        '<div class="card-foot"><div class="price">'+money(p.price)+'</div>'+
+        '<button class="btn primary small" data-order="'+p.id+'">Nu bestellen</button></div></div></div>';
+    }).join('');
+  }
+
+  function renderFooter(){
+    var parts = [];
+    if(settings.whatsapp) parts.push('<a href="https://wa.me/'+settings.whatsapp+'" target="_blank" rel="noopener">WhatsApp</a>');
+    if(settings.email) parts.push('<a href="mailto:'+settings.email+'">E-mail</a>');
+    document.getElementById('footer-contact').innerHTML = parts.length ? ('Contact: '+parts.join(' · ')) : '';
+    if(settings.tagline){
+      document.getElementById('tagline-text').innerHTML = escapeHtml(settings.tagline) +
+        '<span class="sub2">Beperkte oplages, met zorg gemaakt.</span>';
+    }
+  }
+
+  document.querySelectorAll('.tabs .tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.tabs .tab').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      currentFilter = btn.getAttribute('data-filter');
+      renderGrid();
+    });
+  });
+
+  /* ---- order modal ---- */
+  var orderOverlay = document.getElementById('order-overlay');
+  document.getElementById('grid').addEventListener('click', function(e){
+    var btn = e.target.closest('[data-order]');
+    if(!btn) return;
+    pendingProduct = products.find(function(p){ return String(p.id)===btn.getAttribute('data-order'); });
+    if(!pendingProduct) return;
+    document.getElementById('order-summary').innerHTML =
+      'Product: <b>'+escapeHtml(pendingProduct.name)+'</b> — Prijs: <b>'+money(pendingProduct.price)+'</b>';
+    document.getElementById('of-qty').value = 1;
+    document.getElementById('order-status').className = 'status-msg';
+    orderOverlay.classList.add('show');
+  });
+  document.querySelectorAll('[data-close-order]').forEach(function(b){
+    b.addEventListener('click', function(){ orderOverlay.classList.remove('show'); });
+  });
+
+  document.getElementById('order-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var btn = document.getElementById('order-submit-btn');
+    var statusEl = document.getElementById('order-status');
+    btn.disabled = true; btn.textContent = 'Bezig...';
+    try{
+      var res = await fetch('/.netlify/functions/create-payment', {
+        method:'POST',
+        headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({
+          productId: pendingProduct.id,
+          qty: document.getElementById('of-qty').value,
+          name: document.getElementById('of-name').value.trim(),
+          phone: document.getElementById('of-phone').value.trim(),
+          address: document.getElementById('of-address').value.trim(),
+          notes: document.getElementById('of-notes').value.trim()
+        })
+      });
+      var data = await res.json();
+      if(!res.ok || !data.checkoutUrl){
+        throw new Error((data && data.error) || 'Onbekende fout');
+      }
+      window.location.href = data.checkoutUrl;
+    }catch(err){
+      statusEl.textContent = 'Er ging iets mis: ' + err.message;
+      statusEl.className = 'status-msg show err';
+      btn.disabled = false; btn.textContent = 'Doorgaan naar betalen';
+    }
+  });
+
+  /* ================= ADMIN ================= */
+  var adminOverlay = document.getElementById('admin-overlay');
+  document.getElementById('admin-fab').addEventListener('click', function(){ adminOverlay.classList.add('show'); });
+  document.querySelectorAll('[data-close-admin]').forEach(function(b){
+    b.addEventListener('click', function(){ adminOverlay.classList.remove('show'); });
+  });
+
+  document.getElementById('admin-login-btn').addEventListener('click', async function(){
+    var pw = document.getElementById('admin-password-input').value;
+    var statusEl = document.getElementById('admin-login-status');
+    // verify by attempting a harmless save_settings no-op check via save_settings with current settings
+    try{
+      var res = await fetch('/.netlify/functions/admin-save', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ password: pw, action: 'save_settings', payload: settings })
+      });
+      if(res.status === 401){
+        statusEl.textContent = 'Onjuist wachtwoord'; statusEl.className='status-msg show err'; return;
+      }
+      adminPassword = pw;
+      document.getElementById('admin-login').style.display = 'none';
+      document.getElementById('admin-content').style.display = 'block';
+      fillSettingsForm();
+      renderAdminProducts();
+    }catch(err){
+      statusEl.textContent = 'Serverfout, probeer opnieuw'; statusEl.className='status-msg show err';
+    }
+  });
+
+  document.querySelectorAll('.admin-tabs .tab').forEach(function(btn){
+    btn.addEventListener('click', function(){
+      document.querySelectorAll('.admin-tabs .tab').forEach(function(b){ b.classList.remove('active'); });
+      btn.classList.add('active');
+      var tab = btn.getAttribute('data-atab');
+      document.querySelectorAll('.admin-tab-panel').forEach(function(p){
+        p.classList.toggle('active', p.getAttribute('data-apanel')===tab);
+      });
+    });
+  });
+
+  function renderAdminProducts(){
+    var list = document.getElementById('admin-product-list');
+    if(products.length===0){ list.innerHTML = '<div class="empty-note">Nog geen producten.</div>'; return; }
+    list.innerHTML = products.map(function(p){
+      var img = p.image_url || placeholderSvg(p.name);
+      return '<div class="prod-row"><img src="'+img+'" alt=""><div class="pinfo"><div class="n">'+escapeHtml(p.name)+'</div>'+
+        '<div class="p">'+catLabel(p.category)+' · '+money(p.price)+'</div></div>'+
+        '<div class="prod-actions"><button class="btn small" data-edit="'+p.id+'">Bewerken</button>'+
+        '<button class="btn small ghost" data-del="'+p.id+'">Verwijderen</button></div></div>';
+    }).join('');
+  }
+
+  document.getElementById('admin-product-list').addEventListener('click', async function(e){
+    var editBtn = e.target.closest('[data-edit]');
+    var delBtn = e.target.closest('[data-del]');
+    if(editBtn){
+      var p = products.find(function(x){ return String(x.id)===editBtn.getAttribute('data-edit'); });
+      if(!p) return;
+      document.getElementById('pf-id').value = p.id;
+      document.getElementById('pf-name').value = p.name;
+      document.getElementById('pf-cat').value = p.category;
+      document.getElementById('pf-price').value = p.price;
+      document.getElementById('pf-desc').value = p.description || '';
+      document.getElementById('pf-preview').innerHTML = p.image_url ? ('<img src="'+p.image_url+'">') : 'Geen afbeelding';
+      pfImageFile = null;
+      document.querySelector('.admin-tabs .tab[data-atab="add"]').click();
+    }
+    if(delBtn){
+      if(!confirm('Dit product verwijderen?')) return;
+      var res = await fetch('/.netlify/functions/admin-save', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ password: adminPassword, action:'delete_product', payload:{ id: delBtn.getAttribute('data-del') } })
+      });
+      if(res.ok){ await loadData(); renderAdminProducts(); }
+    }
+  });
+
+  document.getElementById('pf-image').addEventListener('change', function(e){
+    pfImageFile = e.target.files[0] || null;
+    var prev = document.getElementById('pf-preview');
+    if(pfImageFile){
+      var reader = new FileReader();
+      reader.onload = function(ev){ prev.innerHTML = '<img src="'+ev.target.result+'">'; };
+      reader.readAsDataURL(pfImageFile);
+    }
+  });
+
+  document.getElementById('pf-reset').addEventListener('click', function(){
+    document.getElementById('product-form').reset();
+    document.getElementById('pf-id').value = '';
+    document.getElementById('pf-preview').innerHTML = 'Geen afbeelding';
+    pfImageFile = null;
+  });
+
+  document.getElementById('product-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var statusEl = document.getElementById('pf-status');
+    statusEl.textContent = 'Bezig met opslaan...'; statusEl.className = 'status-msg show ok';
+    try{
+      var id = document.getElementById('pf-id').value || ('p-' + Date.now());
+      var imageUrl = null;
+      var existing = products.find(function(x){ return String(x.id)===id; });
+      if(existing) imageUrl = existing.image_url;
+
+      if(pfImageFile){
+        var base64 = await new Promise(function(resolve, reject){
+          var r = new FileReader();
+          r.onload = function(){ resolve(r.result.split(',')[1]); };
+          r.onerror = reject;
+          r.readAsDataURL(pfImageFile);
+        });
+        var upRes = await fetch('/.netlify/functions/admin-save', {
+          method:'POST', headers:{'Content-Type':'application/json'},
+          body: JSON.stringify({
+            password: adminPassword, action:'upload_image',
+            payload: { fileName: pfImageFile.name, base64Data: base64, contentType: pfImageFile.type }
+          })
+        });
+        var upData = await upRes.json();
+        if(!upRes.ok) throw new Error(upData.error || 'Upload mislukt');
+        imageUrl = upData.url;
+      }
+
+      var product = {
+        id: id,
+        name: document.getElementById('pf-name').value.trim(),
+        category: document.getElementById('pf-cat').value,
+        price: parseFloat(document.getElementById('pf-price').value),
+        description: document.getElementById('pf-desc').value.trim(),
+        image_url: imageUrl
+      };
+
+      var res = await fetch('/.netlify/functions/admin-save', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ password: adminPassword, action:'save_product', payload: product })
+      });
+      var data = await res.json();
+      if(!res.ok) throw new Error(data.error || 'Opslaan mislukt');
+
+      statusEl.textContent = 'Opgeslagen ✓'; statusEl.className = 'status-msg show ok';
+      await loadData();
+      renderAdminProducts();
+      document.getElementById('product-form').reset();
+      document.getElementById('pf-id').value = '';
+      document.getElementById('pf-preview').innerHTML = 'Geen afbeelding';
+      pfImageFile = null;
+    }catch(err){
+      statusEl.textContent = 'Fout: ' + err.message; statusEl.className = 'status-msg show err';
+    }
+  });
+
+  function fillSettingsForm(){
+    document.getElementById('sf-whatsapp').value = settings.whatsapp || '';
+    document.getElementById('sf-email').value = settings.email || '';
+    document.getElementById('sf-tagline').value = settings.tagline || '';
+  }
+
+  document.getElementById('settings-form').addEventListener('submit', async function(e){
+    e.preventDefault();
+    var statusEl = document.getElementById('sf-status');
+    var payload = {
+      whatsapp: document.getElementById('sf-whatsapp').value.trim().replace(/[^0-9]/g,''),
+      email: document.getElementById('sf-email').value.trim(),
+      tagline: document.getElementById('sf-tagline').value.trim()
+    };
+    try{
+      var res = await fetch('/.netlify/functions/admin-save', {
+        method:'POST', headers:{'Content-Type':'application/json'},
+        body: JSON.stringify({ password: adminPassword, action:'save_settings', payload: payload })
+      });
+      var data = await res.json();
+      if(!res.ok) throw new Error(data.error || 'Opslaan mislukt');
+      statusEl.textContent = 'Opgeslagen ✓'; statusEl.className = 'status-msg show ok';
+      settings = Object.assign({}, settings, payload);
+      renderFooter();
+    }catch(err){
+      statusEl.textContent = 'Fout: ' + err.message; statusEl.className = 'status-msg show err';
+    }
+  });
+
+  loadData();
+})();
+</script>
+</body>
+</html>
