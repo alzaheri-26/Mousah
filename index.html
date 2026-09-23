@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Mousah Al Zaheri | Luxury Candles & Arabic Perfumes</title>
-<meta name="description" content="Mousah Al Zaheri offers handcrafted scented candles and authentic Arabic perfumes with a refined luxury touch.">
+<title>Mousah Al Zaheri — Sierkaarsen & Arabische parfums</title>
+<meta name="description" content="Handgemaakte sierkaarsen en authentieke Arabische parfums van Mousah Al Zaheri. Bestel online, veilig betalen via iDEAL, creditcard of Apple Pay.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&family=Playfair+Display:ital,wght@0,500;0,700;1,500&display=swap" rel="stylesheet">
@@ -12,75 +12,61 @@
   :root{
     --bg:#0b0906; --bg-panel:#15120c; --bg-card:#1a1610;
     --gold:#c9974a; --gold-light:#e9cd94; --gold-dim:#8a6c3a;
-    --text:#f2ead9; --text-muted:#b3a68c; --line:rgba(201,151,74,.32);
+    --text:#f2ead9; --text-muted:#b3a68c; --line:#3a2f1e;
     --danger:#c0554a; --ok:#5c8a5c;
-    --shadow:0 18px 45px rgba(0,0,0,.32);
     font-family:'Cairo','Segoe UI',Tahoma,sans-serif;
   }
   *{box-sizing:border-box;}
   html,body{margin:0;padding:0;}
-  body{
-    background:
-      linear-gradient(135deg, rgba(8,7,5,.85), rgba(18,15,11,.74)),
-      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1800&q=80') center/cover fixed no-repeat;
-    color:var(--text);min-height:100vh;line-height:1.65;-webkit-font-smoothing:antialiased;
-  }
+  body{background:var(--bg);color:var(--text);min-height:100vh;line-height:1.65;-webkit-font-smoothing:antialiased;}
   img{max-width:100%;display:block;}
   a{color:inherit;}
   button{font-family:inherit;cursor:pointer;}
   .en{font-family:'Playfair Display',Georgia,serif;}
   .wrap{max-width:1080px;margin:0 auto;padding:0 20px;}
   .ornament-line{height:1px;background:linear-gradient(90deg,transparent,var(--gold-dim) 20%,var(--gold) 50%,var(--gold-dim) 80%,transparent);margin:0 auto;width:min(420px,70%);}
-  header.hero{
-    position:relative;padding:56px 0 64px;text-align:center;border-bottom:1px solid var(--line);
-    background:linear-gradient(180deg, rgba(15,11,8,.7), rgba(15,11,8,.82)),
-      url('https://images.unsplash.com/photo-1515377905703-c4788e51af15?auto=format&fit=crop&w=1800&q=80') center/cover no-repeat;
-    box-shadow:inset 0 0 120px rgba(0,0,0,.5);
-  }
-  header.hero::before{
-    content:'';position:absolute;inset:0;background:radial-gradient(circle at 50% 10%, rgba(201,151,74,.22), transparent 42%);
-  }
-  .wrap, .section, .strip, footer { position:relative; z-index:1; }
-  .emblem{width:118px;height:118px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;border:1px solid rgba(201,151,74,.45);border-radius:50%;background:rgba(12,10,8,.3);box-shadow:0 0 30px rgba(201,151,74,.12);}
-  .brand-name-en{font-size:clamp(28px,5vw,52px);color:var(--gold-light);letter-spacing:.04em;margin:0;text-shadow:0 4px 18px rgba(0,0,0,.4);}
-  .brand-name-ar{font-size:clamp(15px,2.4vw,19px);color:var(--text-muted);letter-spacing:.12em;margin:8px 0 0;}
-  .tagline{margin:20px auto 0;max-width:620px;color:var(--text-muted);font-size:15px;line-height:1.8;}
+  header.hero{padding:56px 0 64px;text-align:center;border-bottom:1px solid var(--line);
+    background:radial-gradient(ellipse at 50% -10%, rgba(201,151,74,0.14), transparent 60%), var(--bg);}
+  .emblem{width:104px;height:104px;margin:0 auto 18px;display:flex;align-items:center;justify-content:center;}
+  .brand-name-en{font-size:clamp(28px,5vw,44px);color:var(--gold-light);letter-spacing:.04em;margin:0;}
+  .brand-name-ar{font-size:clamp(15px,2.4vw,19px);color:var(--text-muted);letter-spacing:.12em;margin:6px 0 0;}
+  .tagline{margin:20px auto 0;max-width:520px;color:var(--text-muted);font-size:15px;}
   .tagline .sub2{color:var(--gold);font-size:16px;display:block;margin-top:6px;}
   .section{padding:56px 0;}
   .section-head{text-align:center;margin-bottom:36px;}
-  .section-head h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px;color:var(--gold-light);text-transform:uppercase;letter-spacing:.08em;}
+  .section-head h2{font-size:clamp(22px,3.4vw,30px);margin:0 0 10px;color:var(--gold-light);}
   .section-head p{color:var(--text-muted);margin:0;font-size:14.5px;}
   .tabs{display:flex;gap:10px;justify-content:center;margin-bottom:32px;flex-wrap:wrap;}
-  .tab{padding:9px 22px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.02);color:var(--text-muted);font-size:14px;font-weight:600;transition:border-color .2s,color .2s,background .2s,transform .2s;}
-  .tab.active,.tab:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(201,151,74,.08);transform:translateY(-1px);}
+  .tab{padding:9px 22px;border:1px solid var(--line);border-radius:999px;background:transparent;color:var(--text-muted);font-size:14px;font-weight:600;transition:border-color .2s,color .2s,background .2s;}
+  .tab.active,.tab:hover{border-color:var(--gold);color:var(--gold-light);background:rgba(201,151,74,.08);}
   .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:22px;}
-  .card{background:linear-gradient(180deg, rgba(26,22,16,.95), rgba(20,17,12,.95));border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;box-shadow:var(--shadow);}
+  .card{background:var(--bg-card);border:1px solid var(--line);overflow:hidden;display:flex;flex-direction:column;}
   .card-img{aspect-ratio:1/1;background:#0f0d09;display:flex;align-items:center;justify-content:center;overflow:hidden;border-bottom:1px solid var(--line);}
   .card-img img{width:100%;height:100%;object-fit:cover;}
   .card-body{padding:16px 18px 18px;display:flex;flex-direction:column;gap:8px;flex:1;}
-  .card-cat{font-size:11.5px;letter-spacing:.06em;color:var(--gold-dim);text-transform:uppercase;}
+  .card-cat{font-size:11.5px;letter-spacing:.06em;color:var(--gold-dim);}
   .card-title{font-size:16.5px;font-weight:700;color:var(--text);margin:0;}
   .card-desc{font-size:13.5px;color:var(--text-muted);flex:1;}
   .card-foot{display:flex;align-items:center;justify-content:space-between;margin-top:6px;gap:10px;}
   .price{font-size:16px;color:var(--gold-light);font-weight:700;}
-  .btn{border:1px solid var(--gold-dim);background:transparent;color:var(--gold-light);padding:9px 16px;font-size:13.5px;font-weight:700;border-radius:2px;transition:background .2s,color .2s,transform .2s;white-space:nowrap;}
-  .btn:hover{background:var(--gold);color:#1a1207;transform:translateY(-1px);}
+  .btn{border:1px solid var(--gold-dim);background:transparent;color:var(--gold-light);padding:9px 16px;font-size:13.5px;font-weight:700;border-radius:2px;transition:background .2s,color .2s;white-space:nowrap;}
+  .btn:hover{background:var(--gold);color:#1a1207;}
   .btn.primary{background:var(--gold);color:#1a1207;}
   .btn.primary:hover{background:var(--gold-light);}
   .btn.ghost{border-color:var(--line);color:var(--text-muted);}
   .btn.small{padding:6px 12px;font-size:12.5px;}
   .btn.block{width:100%;}
   .btn:disabled{opacity:.5;cursor:not-allowed;}
-  .empty-note{text-align:center;color:var(--text-muted);border:1px dashed var(--line);padding:34px 20px;font-size:14px;background:rgba(255,255,255,.02);}
-  .strip{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:linear-gradient(180deg, rgba(21,18,12,.8), rgba(15,12,9,.8));}
-  .strip-item{text-align:center;max-width:220px;}
+  .empty-note{text-align:center;color:var(--text-muted);border:1px dashed var(--line);padding:34px 20px;font-size:14px;}
+  .strip{display:flex;justify-content:center;gap:40px;flex-wrap:wrap;padding:34px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--bg-panel);}
+  .strip-item{text-align:center;max-width:200px;}
   .strip-item .ic{font-size:22px;color:var(--gold);margin-bottom:8px;}
   .strip-item .t{font-size:13.5px;color:var(--text-muted);}
-  footer{padding:36px 0 30px;text-align:center;color:var(--text-muted);font-size:13px;border-top:1px solid var(--line);background:rgba(10,8,6,.6);}
+  footer{padding:36px 0 30px;text-align:center;color:var(--text-muted);font-size:13px;border-top:1px solid var(--line);}
   footer .brand{color:var(--gold-light);font-weight:700;}
   .overlay{position:fixed;inset:0;background:rgba(6,5,3,.72);display:none;align-items:flex-start;justify-content:center;padding:24px 16px;overflow-y:auto;z-index:60;}
   .overlay.show{display:flex;}
-  .modal{background:var(--bg-panel);border:1px solid var(--line);max-width:460px;width:100%;padding:26px 24px 24px;margin-top:24px;position:relative;box-shadow:var(--shadow);}
+  .modal{background:var(--bg-panel);border:1px solid var(--line);max-width:460px;width:100%;padding:26px 24px 24px;margin-top:24px;position:relative;}
   .modal h3{margin:0 0 4px;color:var(--gold-light);font-size:19px;}
   .modal .sub{color:var(--text-muted);font-size:13px;margin-bottom:18px;}
   .field{margin-bottom:14px;}
@@ -94,8 +80,8 @@
   .order-summary{background:#0f0d09;border:1px solid var(--line);padding:10px 12px;font-size:13px;color:var(--text-muted);margin-bottom:14px;}
   .order-summary b{color:var(--gold-light);}
   .payment-note{font-size:12.5px;color:var(--text-muted);border-top:1px dashed var(--line);padding-top:10px;margin-top:4px;white-space:pre-line;}
-  #admin-fab{position:fixed;bottom:20px;right:20px;z-index:50;background:var(--gold);color:#1a1207;border:none;padding:12px 18px;border-radius:999px;font-weight:800;font-size:13.5px;box-shadow:0 12px 32px rgba(201,151,74,.28);}
-  .admin-panel{background:var(--bg-panel);border:1px solid var(--line);max-width:640px;width:100%;margin-top:24px;max-height:88vh;overflow-y:auto;box-shadow:var(--shadow);}
+  #admin-fab{position:fixed;bottom:20px;right:20px;z-index:50;background:var(--gold);color:#1a1207;border:none;padding:12px 18px;border-radius:999px;font-weight:800;font-size:13.5px;box-shadow:0 6px 20px rgba(0,0,0,.5);}
+  .admin-panel{background:var(--bg-panel);border:1px solid var(--line);max-width:640px;width:100%;margin-top:24px;max-height:88vh;overflow-y:auto;}
   .admin-head{padding:20px 22px;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;align-items:center;position:sticky;top:0;background:var(--bg-panel);}
   .admin-head h3{margin:0;color:var(--gold-light);font-size:18px;}
   .admin-tabs{display:flex;gap:8px;padding:14px 22px 0;}
@@ -109,7 +95,7 @@
   .prod-row .pinfo .p{font-size:12.5px;color:var(--text-muted);}
   .prod-actions{display:flex;gap:6px;}
   .field-file{display:flex;align-items:center;gap:12px;}
-  .file-preview{width:60px;height:60px;background:#0f0d09;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;color:var(--text-muted);font-size:10px;text-align:center;padding:6px;}
+  .file-preview{width:60px;height:60px;background:#0f0d09;border:1px solid var(--line);display:flex;align-items:center;justify-content:center;overflow:hidden;flex-shrink:0;color:var(--text-muted);font-size:11px;}
   .file-preview img{width:100%;height:100%;object-fit:cover;}
   .status-msg{font-size:13px;padding:10px 12px;border-radius:2px;margin-top:10px;display:none;}
   .status-msg.show{display:block;}
@@ -118,7 +104,7 @@
   .hint{font-size:12px;color:var(--text-muted);margin-top:4px;}
   .divider-label{font-size:12px;color:var(--gold-dim);letter-spacing:.06em;margin:22px 0 10px;padding-top:14px;border-top:1px solid var(--line);}
   .divider-label:first-child{border-top:none;margin-top:0;padding-top:0;}
-  @media (max-width:520px){.row2{grid-template-columns:1fr;}.strip{gap:26px;} .brand-name-ar{letter-spacing:.08em;}}
+  @media (max-width:520px){.row2{grid-template-columns:1fr;}.strip{gap:26px;}}
 </style>
 </head>
 <body>
@@ -128,43 +114,43 @@
     <div class="emblem">
       <svg viewBox="0 0 100 100" width="100" height="100">
         <path d="M50 6 L90 40 L90 94 L10 94 L10 40 Z" fill="none" stroke="#c9974a" stroke-width="1.4" opacity="0.55"/>
-        <text x="50" y="66" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="40" fill="#e9cd94" font-style="italic">M</text>
+        <text x="50" y="66" text-anchor="middle" font-family="Playfair Display, Georgia, serif" font-size="40" fill="#e9cd94" font-style="italic">AZ</text>
       </svg>
     </div>
     <h1 class="brand-name-en en">Mousah Al Zaheri</h1>
-    <p class="brand-name-ar">Luxury scented candles & Arabic perfumes</p>
+    <p class="brand-name-ar">Because you deserve to feel special</p>
     <div class="ornament-line" style="margin-top:22px;"></div>
-    <p class="tagline" id="tagline-text">Handcrafted luxury candles and authentic Arabic perfumes, curated for a refined and memorable experience.
-      <span class="sub2">Limited editions, crafted with care.</span>
+    <p class="tagline" id="tagline-text">Handgemaakte sierkaarsen en authentieke Arabische parfums, met een vleugje luxe dat bij u past.
+      <span class="sub2">Beperkte oplages, met zorg gemaakt.</span>
     </p>
   </div>
 </header>
 
 <section class="strip">
-  <div class="strip-item"><div class="ic">✦</div><div class="t">Handcrafted with meticulous attention to detail</div></div>
-  <div class="strip-item"><div class="ic">✦</div><div class="t">Authentic ingredients and luxurious presentation</div></div>
-  <div class="strip-item"><div class="ic">✦</div><div class="t">Perfect gifting for a memorable occasion</div></div>
+  <div class="strip-item"><div class="ic">✦</div><div class="t">Met de hand gemaakt, tot in het kleinste detail</div></div>
+  <div class="strip-item"><div class="ic">✦</div><div class="t">Hoogwaardige, authentieke ingrediënten</div></div>
+  <div class="strip-item"><div class="ic">✦</div><div class="t">Luxe verpakking, perfect als cadeau</div></div>
 </section>
 
 <section class="section">
   <div class="wrap">
     <div class="section-head">
-      <h2>Our Collection</h2>
-      <p>Elegant home fragrance and authentic Arabic perfume — designed to feel personal and luxurious</p>
+      <h2>Onze collectie</h2>
+      <p>Sierkaarsen en Arabische parfums — elk stuk gemaakt met liefde en oog voor detail</p>
     </div>
     <div class="tabs">
-      <button class="tab active" data-filter="all">All</button>
-      <button class="tab" data-filter="candle">Candles</button>
-      <button class="tab" data-filter="perfume">Arabic Perfumes</button>
+      <button class="tab active" data-filter="all">Alles</button>
+      <button class="tab" data-filter="candle">Sierkaarsen</button>
+      <button class="tab" data-filter="perfume">Arabische parfums</button>
     </div>
-    <div id="grid" class="grid"><div class="empty-note">Products are loading...</div></div>
+    <div id="grid" class="grid"><div class="empty-note">Producten worden geladen...</div></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap">
     <div class="ornament-line" style="margin-bottom:18px;"></div>
-    <span class="brand">Mousah Al Zaheri</span> — Luxury in every detail
+    <span class="brand">Mousah Al Zaheri</span> — Because you deserve to feel special
     <div id="footer-contact" style="margin-top:8px;"></div>
   </div>
 </footer>
@@ -173,21 +159,21 @@
 <div class="overlay" id="order-overlay">
   <div class="modal">
     <button class="close-x" data-close-order>×</button>
-    <h3>Confirm Order</h3>
-    <p class="sub">Please complete your details and you will be redirected to the secure checkout page.</p>
+    <h3>Bestelling bevestigen</h3>
+    <p class="sub">Vul uw gegevens in, u wordt daarna direct doorgestuurd naar de beveiligde betaalpagina</p>
     <div class="order-summary" id="order-summary"></div>
     <form id="order-form">
-      <div class="field"><label>Full name</label><input type="text" id="of-name" required></div>
+      <div class="field"><label>Volledige naam</label><input type="text" id="of-name" required></div>
       <div class="row2">
-        <div class="field"><label>Phone number</label><input type="tel" id="of-phone" required placeholder="06xxxxxxxx"></div>
-        <div class="field"><label>Quantity</label><input type="number" id="of-qty" min="1" value="1" required></div>
+        <div class="field"><label>Telefoonnummer</label><input type="tel" id="of-phone" required placeholder="06xxxxxxxx"></div>
+        <div class="field"><label>Aantal</label><input type="number" id="of-qty" min="1" value="1" required></div>
       </div>
-      <div class="field"><label>Delivery address</label><input type="text" id="of-address" required></div>
-      <div class="field"><label>Additional notes (optional)</label><textarea id="of-notes" placeholder="Example: preferred scent, color, gift note..."></textarea></div>
-      <div class="payment-note">Secure payment via iDEAL, credit card, Apple Pay or other methods (Mollie).</div>
+      <div class="field"><label>Bezorgadres</label><input type="text" id="of-address" required></div>
+      <div class="field"><label>Extra opmerkingen (optioneel)</label><textarea id="of-notes" placeholder="Bijv.: gewenste kleur, geurvoorkeur..."></textarea></div>
+      <div class="payment-note">Veilig betalen via iDEAL, creditcard, Apple Pay of andere methoden (Mollie).</div>
       <div class="modal-actions">
-        <button type="button" class="btn ghost block" data-close-order>Cancel</button>
-        <button type="submit" class="btn primary block" id="order-submit-btn">Proceed to payment</button>
+        <button type="button" class="btn ghost block" data-close-order>Annuleren</button>
+        <button type="submit" class="btn primary block" id="order-submit-btn">Doorgaan naar betalen</button>
       </div>
       <div class="status-msg" id="order-status"></div>
     </form>
@@ -195,26 +181,26 @@
 </div>
 
 <!-- ===================== ADMIN ===================== -->
-<button id="admin-fab">⚙ Manage</button>
+<button id="admin-fab">⚙ Beheer</button>
 
 <div class="overlay" id="admin-overlay">
   <div class="admin-panel">
     <div class="admin-head">
-      <h3>Store Management</h3>
+      <h3>Winkelbeheer</h3>
       <button class="close-x" data-close-admin style="position:static;">×</button>
     </div>
 
     <div id="admin-login" style="padding:22px;">
-      <div class="field"><label>Admin password</label><input type="password" id="admin-password-input"></div>
-      <button class="btn primary block" id="admin-login-btn">Login</button>
+      <div class="field"><label>Beheerderswachtwoord</label><input type="password" id="admin-password-input"></div>
+      <button class="btn primary block" id="admin-login-btn">Inloggen</button>
       <div class="status-msg" id="admin-login-status"></div>
     </div>
 
     <div id="admin-content" style="display:none;">
       <div class="admin-tabs">
-        <button class="tab active" data-atab="products">Products</button>
-        <button class="tab" data-atab="add">Add Product</button>
-        <button class="tab" data-atab="settings">Settings</button>
+        <button class="tab active" data-atab="products">Producten</button>
+        <button class="tab" data-atab="add">Product toevoegen</button>
+        <button class="tab" data-atab="settings">Instellingen</button>
       </div>
       <div class="admin-body">
         <div class="admin-tab-panel active" data-apanel="products">
@@ -224,25 +210,25 @@
         <div class="admin-tab-panel" data-apanel="add">
           <form id="product-form">
             <input type="hidden" id="pf-id">
-            <div class="field"><label>Product name</label><input type="text" id="pf-name" required></div>
+            <div class="field"><label>Productnaam</label><input type="text" id="pf-name" required></div>
             <div class="row2">
-              <div class="field"><label>Category</label>
-                <select id="pf-cat"><option value="candle">Candle</option><option value="perfume">Arab Perfume</option></select>
+              <div class="field"><label>Categorie</label>
+                <select id="pf-cat"><option value="candle">Sierkaars</option><option value="perfume">Arabisch parfum</option></select>
               </div>
-              <div class="field"><label>Price (€)</label><input type="number" id="pf-price" min="0" step="0.01" required></div>
+              <div class="field"><label>Prijs (€)</label><input type="number" id="pf-price" min="0" step="0.01" required></div>
             </div>
-            <div class="field"><label>Short description</label><textarea id="pf-desc"></textarea></div>
+            <div class="field"><label>Korte beschrijving</label><textarea id="pf-desc"></textarea></div>
             <div class="field">
-              <label>Product image</label>
+              <label>Productafbeelding</label>
               <div class="field-file">
-                <div class="file-preview" id="pf-preview">No image</div>
+                <div class="file-preview" id="pf-preview">Geen afbeelding</div>
                 <input type="file" id="pf-image" accept="image/*">
               </div>
-              <div class="hint">Prefer a square image under 1 MB.</div>
+              <div class="hint">Bij voorkeur een vierkante afbeelding kleiner dan 1 MB.</div>
             </div>
             <div class="modal-actions">
-              <button type="button" class="btn ghost block" id="pf-reset">Clear fields</button>
-              <button type="submit" class="btn primary block" id="pf-submit">Save product</button>
+              <button type="button" class="btn ghost block" id="pf-reset">Velden wissen</button>
+              <button type="submit" class="btn primary block" id="pf-submit">Product opslaan</button>
             </div>
             <div class="status-msg" id="pf-status"></div>
           </form>
@@ -250,12 +236,12 @@
 
         <div class="admin-tab-panel" data-apanel="settings">
           <form id="settings-form">
-            <div class="divider-label">Orders received</div>
-            <div class="field"><label>WhatsApp number (international format)</label><input type="text" id="sf-whatsapp" placeholder="316xxxxxxxx"></div>
-            <div class="field"><label>Email address</label><input type="email" id="sf-email"></div>
-            <div class="divider-label">Site text</div>
-            <div class="field"><label>Welcome line under the logo</label><textarea id="sf-tagline"></textarea></div>
-            <button type="submit" class="btn primary block">Save settings</button>
+            <div class="divider-label">Bestellingen ontvangen</div>
+            <div class="field"><label>WhatsApp-nummer (internationaal formaat)</label><input type="text" id="sf-whatsapp" placeholder="316xxxxxxxx"></div>
+            <div class="field"><label>E-mailadres</label><input type="email" id="sf-email"></div>
+            <div class="divider-label">Sitetekst</div>
+            <div class="field"><label>Welkomstzin onder het logo</label><textarea id="sf-tagline"></textarea></div>
+            <button type="submit" class="btn primary block">Instellingen opslaan</button>
             <div class="status-msg" id="sf-status"></div>
           </form>
         </div>
@@ -266,9 +252,9 @@
 
 <script>
 /* ====== FILL THESE IN AFTER CREATING YOUR SUPABASE PROJECT (see SETUP.md) ====== */
-
-/*const SUPABASE_URL = "https://lnzckfohmfifcjecmnvy.supabase.co";
-const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuemNrZm9obWZpZmNqZWNtbnZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwMjI4NjksImV4cCI6MjEwNTU5ODg2OX0.OfI[...]
+const SUPABASE_URL = "https://lnzckfohmfifcjecmnvy.supabase.co";
+const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImxuemNrZm9obWZpZmNqZWNtbnZ5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTAwMjI4NjksImV4cCI6MjEwNTU5ODg2OX0.OfIxaKt2YrWKcdsjR8tTXcVP8-1ddtSuhlE63dyjesU";
+/* ================================================================================ */
 
 (function(){
   "use strict";
@@ -284,7 +270,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
   function escapeHtml(s){ var d=document.createElement('div'); d.textContent = s==null?'':s; return d.innerHTML; }
   function placeholderSvg(label){
     var safe=(label||'').slice(0,2);
-    return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><rect width="100%" height="100%" fill="#12100a"/><text x="50%" y="52%" fill="#c9974a" font-size="52" font-family="Arial" text-anchor="middle">'+safe+'</text></svg>');
+    return 'data:image/svg+xml;utf8,'+encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" width="300" height="300"><rect width="100%" height="100%" fill="#12100a"/><text x="50%" y="52%" font-family="Georgia, serif" font-size="60" fill="#5a4a2c" text-anchor="middle" dominant-baseline="middle">'+safe+'</text></svg>');
   }
 
   async function sbGet(path){
@@ -339,6 +325,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
     });
   });
 
+  /* ---- order modal ---- */
   var orderOverlay = document.getElementById('order-overlay');
   document.getElementById('grid').addEventListener('click', function(e){
     var btn = e.target.closest('[data-order]');
@@ -385,6 +372,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
     }
   });
 
+  /* ================= ADMIN ================= */
   var adminOverlay = document.getElementById('admin-overlay');
   document.getElementById('admin-fab').addEventListener('click', function(){ adminOverlay.classList.add('show'); });
   document.querySelectorAll('[data-close-admin]').forEach(function(b){
@@ -394,6 +382,7 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
   document.getElementById('admin-login-btn').addEventListener('click', async function(){
     var pw = document.getElementById('admin-password-input').value;
     var statusEl = document.getElementById('admin-login-status');
+    // verify by attempting a harmless save_settings no-op check via save_settings with current settings
     try{
       var res = await fetch('/.netlify/functions/admin-save', {
         method:'POST', headers:{'Content-Type':'application/json'},
@@ -565,7 +554,6 @@ const SUPABASE_ANON_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBh
 
   loadData();
 })();
-*/
 </script>
 </body>
 </html>
